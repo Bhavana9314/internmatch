@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pen</title>
+  </head>
+  <body>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
+<div class="app">
+  <header class="topbar">
+    <a class="brand" href="#home">Intern<span>Match</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#student">Student</a>
+      <a href="#jobs">Internships</a>
+      <a href="#recruiter">Recruiter</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">YOUR CAREER STARTS HERE</p>
+      <h1>Find the internship that matches your potential.</h1>
+      <p>Discover opportunities based on your skills, interests and career goals.</p>
+      <a class="primary-btn" href="#student">Get Started</a>
+      <a class="secondary-btn" href="#jobs">Explore Internships</a>
+    </div>
+    <div class="hero-art">🎓</div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <span>🎯</span>
+      <h3>Smart Matching</h3>
+      <p>Find internships that match your skills.</p>
+    </div>
+    <div class="feature">
+      <span>📚</span>
+      <h3>Skill Gap Analysis</h3>
+      <p>Discover skills you can improve.</p>
+    </div>
+    <div class="feature">
+      <span>💼</span>
+      <h3>Career Opportunities</h3>
+      <p>Explore opportunities from recruiters.</p>
+    </div>
+  </section>
+
+  <section id="student" class="section">
+    <div class="section-heading">
+      <p class="eyebrow">FOR STUDENTS</p>
+      <h2>Student Registration</h2>
+      <p>Create your profile to receive internship recommendations.</p>
+    </div>
+
+    <form id="studentForm" class="form-card">
+      <label>Full Name</label>
+      <input id="studentName" required placeholder="Enter your name">
+
+      <label>Email Address</label>
+      <input id="studentEmail" type="email" required placeholder="Enter your email">
+
+      <label>College Name</label>
+      <input id="college" required placeholder="Enter your college">
+
+      <label>Branch</label>
+      <select id="branch" required>
+        <option value="">Select your branch</option>
+        <option>ECE</option>
+        <option>CSE</option>
+        <option>EEE</option>
+        <option>Mechanical</option>
+        <option>Civil</option>
+        <option>Other</option>
+      </select>
+
+      <label>Your Skills</label>
+      <input id="skills" required placeholder="Example: Python, Electronics, HTML">
+
+      <label>Career Interest</label>
+      <input id="interest" required placeholder="Example: Web Development, AI">
+
+      <button class="primary-btn full-btn" type="submit">Create Profile & Find Internships</button>
+    </form>
+
+    <div id="studentDashboard" class="dashboard hidden">
+      <h2>Welcome, <span id="displayName"></span>!</h2>
+      <div class="profile-card">
+        <h3>Your Student Profile</h3>
+        <p><b>Email:</b> <span id="displayEmail"></span></p>
+        <p><b>College:</b> <span id="displayCollege"></span></p>
+        <p><b>Branch:</b> <span id="displayBranch"></span></p>
+        <p><b>Skills:</b> <span id="displaySkills"></span></p>
+        <p><b>Interest:</b> <span id="displayInterest"></span></p>
+      </div>
+      <p id="studentMessage" class="success-message"></p>
+    </div>
+  </section>
+
+  <section id="jobs" class="section tinted">
+    <div class="section-heading">
+      <p class="eyebrow">EXPLORE OPPORTUNITIES</p>
+      <h2>Internship Recommendations</h2>
+      <p>Register as a student to calculate your match scores.</p>
+    </div>
+
+    <input id="jobSearch" class="search-box"
+      placeholder="Search by title, company or skill...">
+
+    <div id="recommendations" class="job-grid"></div>
+  </section>
+
+  <section id="recruiter" class="section">
+    <div class="section-heading">
+      <p class="eyebrow">FOR COMPANIES</p>
+      <h2>Recruiter Dashboard</h2>
+      <p>Post internship opportunities and connect with students.</p>
+    </div>
+
+    <form id="internshipForm" class="form-card">
+      <label>Company Name</label>
+      <input id="companyName" required placeholder="Company name">
+
+      <label>Internship Title</label>
+      <input id="internshipTitle" required placeholder="Example: Electronics Intern">
+
+      <label>Location</label>
+      <input id="internshipLocation" required placeholder="Hyderabad / Remote">
+
+      <label>Required Skills</label>
+      <input id="requiredSkills" required placeholder="Python, Electronics, HTML">
+
+      <label>Eligibility</label>
+      <input id="eligibility" required placeholder="ECE, CSE students">
+
+      <button class="primary-btn full-btn" type="submit">Post Internship</button>
+    </form>
+
+    <h3 class="center">Posted Internships</h3>
+    <div id="postedInternships" class="job-grid"></div>
+  </section>
+
+  <section id="applications" class="section tinted">
+    <div class="section-heading">
+      <h2>My Applications</h2>
+      <p>Track the internships you have applied for.</p>
+    </div>
+    <div id="myApplications" class="job-grid"></div>
+  </section>
+
+  <section id="about" class="section about">
+    <p class="eyebrow">ABOUT OUR PROJECT</p>
+    <h2>Making Internship Discovery Easier</h2>
+    <p>InternMatch is a student-focused platform designed to connect students with suitable internship opportunities. It uses skill-based matching to help students discover relevant opportunities and identify skills they can improve.</p>
+  </section>
+
+  <section id="contact" class="section tinted">
+    <div class="section-heading">
+      <h2>Contact Us</h2>
+      <p>Have a question about InternMatch? Send us a message.</p>
+    </div>
+    <form id="contactForm" class="form-card">
+      <label>Your Name</label>
+      <input required placeholder="Your name">
+      <label>Your Email</label>
+      <input type="email" required placeholder="Your email">
+      <label>Message</label>
+      <textarea required placeholder="Write your message"></textarea>
+      <button class="primary-btn full-btn" type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <h2>InternMatch</h2>
+    <p>Connecting Students with the Right Opportunities.</p>
+    <a href="#contact">Contact</a>
+    <p class="copyright">© 2026 InternMatch. Student Project Demo.</p>
+  </footer>
+</div>
